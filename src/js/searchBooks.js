@@ -5,6 +5,9 @@
 //  funzione di ricerca libri 
  
  export function searchBooks(searchQuery) {
+
+  searchQuery = searchQuery.trim().toLowerCase();
+
  const apiUrl = `https://openlibrary.org/subjects/${searchQuery}.json`;
 
  console.log('searchBooks called with:', searchQuery);
@@ -37,6 +40,13 @@
     });
     hideSpinner();
   })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+    hideSpinner();
+    // Mostra un messaggio di errore all'utente
+    const booksContainer = document.getElementById('books-container');
+    booksContainer.innerHTML = '<p>Si è verificato un errore durante il caricamento dei dati. Riprova più tardi.</p>';
+});
 }
 
 
