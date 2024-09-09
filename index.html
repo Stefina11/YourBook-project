@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>YourBook</title>
+        <link rel="stylesheet" href="dist/stile.css">
+    </head>
+    <body>
+
+        <header>
+            <div class="header">
+              <div class="logo-container" id="logo-container"></div>
+              <div class="title">
+                <h1>YourBook</h1>
+              </div>
+            </div>
+          </header>
+
+          <div class="main-container">
+            <div class="libri-container" id="libri-container"></div>
+            <div class="bar-container" id="bar-container">
+                <input type="text" id="bar" placeholder="Inserire categoria...">
+                <button id="button"> Cerca</button>
+            </div>
+          </div>
+
+          <section id="searchSection" class="search"> <!--sezione generale della ricerca -->
+            <!-- <div id="errorMessage"></div> conterrà eventuali messaggi di errore -->
+            <div id="books-container">  </div> <!--conterrà i risultati della ricerca -->
+          </section>
+
+          <div id="space"></div>
+
+
+          <footer id="footer">
+            <p>Copyright &#169 2024 by Stefania Maimone</p>
+          </footer>
+        
+
+          <script src="dist/main.js"></script>
+
+          <!-- <div id="modal">
+            <span class="close-button">&times;</span>
+
+          </div> -->
+
+
+      
+
+    </body>
+    
+</html>
