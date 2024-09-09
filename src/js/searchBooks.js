@@ -2,20 +2,19 @@
  import { createModal, hideModal, showModal, openBookModal, getDescription} from './modal.js';
  import { createSpinner, showSpinner, hideSpinner } from './spinner.js';
  
-//  funzione di ricerca libri 
+
+
+ //  funzione di ricerca libri 
  
  export function searchBooks(searchQuery) {
 
   searchQuery = searchQuery.toLowerCase().trim();
 
   if (!searchQuery) {
-    alert('Per favore, immetti un input valido.');
     return;
 }
 
  const apiUrl = `https://openlibrary.org/subjects/${searchQuery}.json`;
-
-
 
  console.log('searchBooks called with:', searchQuery);
 
@@ -88,6 +87,29 @@
 
       return card;
 }
+
+// // Seleziona l'input e il bottone di ricerca
+// const searchInput = document.getElementById('bar');
+// const searchButton = document.getElementById('button');
+
+// // Funzione per gestire la pressione del tasto "Enter" o del bottone di ricerca
+// function handleSearch() {
+//     const searchQuery = searchInput.value.toLowerCase().trim();
+    
+//     if (!searchQuery) {
+//         alert('Per favore, immetti un input valido.');
+//         return;
+//     }
+//     searchBooks(searchQuery);
+// }
+
+// searchInput.addEventListener('keydown', function(event) {
+//     if (event.key === 'Enter') {
+//         handleSearch();
+//     }
+// });
+
+// searchButton.addEventListener('click', handleSearch);
 
 
 

@@ -53,25 +53,24 @@ let searchQuery;
 
 searchBar.addEventListener("keyup", function(event) {
   searchQuery = searchBar.value.trim();
-  if(searchQuery){
   if (event.key === "Enter") {
-    console.log(searchQuery);
-    searchBooks(searchQuery);
+    if (searchQuery) {
+      console.log(searchQuery);
+      searchBooks(searchQuery);
+    } else {
+      alert("Per favore, inserisci una categoria.");
+    }
   }
-} else{
-  alert ("Per favore, inserisci una categoria.");
-}
 });
 
 
 searchButton.addEventListener('click', function() {
   const searchQuery = searchBar.value.trim();
-  // Controllo se l'input non è vuoto
+
   if (searchQuery) {
       searchBooks(searchQuery);
   } else {
     alert ("Per favore, inserisci una categoria.");
-      // errorMessage.textContent = "Per favore, inserisci una categoria.";
   }
 });
 
