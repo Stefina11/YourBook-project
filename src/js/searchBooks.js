@@ -5,7 +5,17 @@
 //  funzione di ricerca libri 
  
  export function searchBooks(searchQuery) {
+
+  searchQuery = searchQuery.toLowerCase().trim();
+
+  if (!searchQuery) {
+    alert('Per favore, immetti un input valido.');
+    return;
+}
+
  const apiUrl = `https://openlibrary.org/subjects/${searchQuery}.json`;
+
+
 
  console.log('searchBooks called with:', searchQuery);
 
