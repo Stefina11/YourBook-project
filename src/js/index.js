@@ -30,12 +30,12 @@ const urlGit = "https://github.com/Stefina11";
 const footerContainer = document.getElementById('footer');
 const linkLogoGit = document.createElement('a');
 linkLogoGit.href = urlGit;
-linkLogoGit.target = '_blank'; //per aprire link in nuova pagina
+linkLogoGit.target = '_blank'; 
 
 const gitLogoElement = gitLogoFn();
 gitLogoElement.classList.add('gitLogo');
-linkLogoGit.appendChild(gitLogoElement); //appendo l'immagine al link
-footerContainer.appendChild(linkLogoGit); // quindi appendo il link (con immagine compresa)
+linkLogoGit.appendChild(gitLogoElement); 
+footerContainer.appendChild(linkLogoGit); 
 
   
 //_______________elementi dell'html________________//

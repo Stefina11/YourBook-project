@@ -11,10 +11,10 @@ export function createModal() {
     closeButton.textContent = 'x';
 
     closeButton.addEventListener('click', () => {
-      hideModal(modal);
+        hideModal(modal);
     });
 
-    const descriptionElement =  document.createElement('p');
+    const descriptionElement = document.createElement('p');
     descriptionElement.id = 'description';
 
     modal.appendChild(closeButton);
@@ -23,55 +23,52 @@ export function createModal() {
     document.body.appendChild(modal);
 
     return modal;
-  }
+}
 
-export function showModal(modal){
+export function showModal(modal) {
     modal.style.display = 'block';
 }
 
-export function hideModal(modal){
+export function hideModal(modal) {
     modal.style.display = 'none';
 }
 
-  
-  export function openBookModal(book) {
+
+export function openBookModal(book) {
 
     getDescription(book)
-      .then((description) => {
+        .then((description) => {
 
-        const modal = createModal();
-        const descriptionElement = modal.querySelector('#description');
-  
-        if (typeof description === "object") {
-          Object.keys(description).forEach((elem) => {
-          descriptionElement.textContent = description[elem];
-          });
+            const modal = createModal();
+            const descriptionElement = modal.querySelector('#description');
 
-        } else if (typeof description === "undefined") {
-           descriptionElement.textContent = "No description available";
+            if (typeof description === "object") {
+                Object.keys(description).forEach((elem) => {
+                    descriptionElement.textContent = description[elem];
+                });
 
-        } else {
-          descriptionElement.textContent = description;
-        }
-  
-        showModal(modal);
-      })
-      .catch((error) => {
-        console.error('Errore durante il recupero della descrizione:', error);
-      });
-  }
-  
+            } else if (typeof description === "undefined") {
+                descriptionElement.textContent = "No description available";
+
+            } else {
+                descriptionElement.textContent = description;
+            }
+
+            showModal(modal);
+        })
+        .catch((error) => {
+            console.error('Errore durante il recupero della descrizione:', error);
+        });
+}
 
 
-  export function getDescription(book) {
 
-    // console.log('getDescription called with:', book);
+export function getDescription(book) {
 
     const bookKey = book.key;
     const apiUrlDescr = `https://openlibrary.org${bookKey}.json`;
-  
-    return axios.get(apiUrlDescr)
-    .then((response) => response.data.description)
-  
-  }
 
+    return axios.get(apiUrlDescr)
+        .then((response) => response.data.description)
+
+}

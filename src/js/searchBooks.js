@@ -20,7 +20,7 @@
 
  const booksContainer = document.getElementById('books-container');
     
-    booksContainer.innerHTML = ''; // Svuota il contenitore dei libri
+    booksContainer.innerHTML = ''; 
 
     showSpinner(booksContainer);
 
@@ -53,12 +53,10 @@
 
     function createBookCard (book){
       
-      // creazione struttuta card 
+      // creazione struttuta card //
 
-      //creo elemento div per la card
       const card = document.createElement('div');
       card.classList.add('book-card');
-      // card.dataset.bookKey = bookKey;
       
       // creo elemento copertina
       const cover = document.createElement('img');
@@ -88,28 +86,7 @@
       return card;
 }
 
-// // Seleziona l'input e il bottone di ricerca
-// const searchInput = document.getElementById('bar');
-// const searchButton = document.getElementById('button');
 
-// // Funzione per gestire la pressione del tasto "Enter" o del bottone di ricerca
-// function handleSearch() {
-//     const searchQuery = searchInput.value.toLowerCase().trim();
-    
-//     if (!searchQuery) {
-//         alert('Per favore, immetti un input valido.');
-//         return;
-//     }
-//     searchBooks(searchQuery);
-// }
-
-// searchInput.addEventListener('keydown', function(event) {
-//     if (event.key === 'Enter') {
-//         handleSearch();
-//     }
-// });
-
-// searchButton.addEventListener('click', handleSearch);
 
 
 

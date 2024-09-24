@@ -1,9 +1,9 @@
-import logoImg from '../img/logo.png'; //importiamo un immagine come se fosse un modulo js
+import logoImg from '../img/logo.png'; 
 import '../css/stile.css';
 
 function logo(){
     const logoDomImage = new Image();
-    logoDomImage.src = logoImg; //che contiene l'url
+    logoDomImage.src = logoImg; 
     logoDomImage.className = 'my-logo';
     return logoDomImage
 }
