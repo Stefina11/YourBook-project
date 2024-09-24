@@ -1,15 +1,16 @@
-# 🚀 Welcome to your new awesome project!
+# YourBook
 
-This project has been created using **webpack-cli**, you can now run
+YourBook è una piattaforma per la ricerca di libri per genere letterario. La piattaforma attinge dalla risorsa OpenLibrary.
 
-```
-npm run build
-```
+# LINK
+yourbookfindit.netlify.app
 
-or
+# FUNZIONALITA'
+Inserisci il genere letterario per il quale vuoi effettuare la ricerca e premi invio....ecco a te tutti i libri del genere da te ricercato!
 
-```
-yarn build
-```
 
-to bundle your application
+## Contribuire a YourBook
+
+Se vuoi contribuire a YourBook, puoi aprire un issue nel repository Git e descrivere il tuo contributo.
+![image](https://github.com/user-attachments/assets/d0f1fe39-f30e-4fc0-b5b1-bf2f6d6935e6)
+
