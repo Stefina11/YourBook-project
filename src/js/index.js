@@ -30,12 +30,12 @@ const urlGit = "https://github.com/Stefina11";
 const footerContainer = document.getElementById('footer');
 const linkLogoGit = document.createElement('a');
 linkLogoGit.href = urlGit;
-linkLogoGit.target = '_blank'; //per aprire link in nuova pagina
+linkLogoGit.target = '_blank'; 
 
 const gitLogoElement = gitLogoFn();
 gitLogoElement.classList.add('gitLogo');
-linkLogoGit.appendChild(gitLogoElement); //appendo l'immagine al link
-footerContainer.appendChild(linkLogoGit); // quindi appendo il link (con immagine compresa)
+linkLogoGit.appendChild(gitLogoElement); 
+footerContainer.appendChild(linkLogoGit); 
 
   
 //_______________elementi dell'html________________//
@@ -53,25 +53,24 @@ let searchQuery;
 
 searchBar.addEventListener("keyup", function(event) {
   searchQuery = searchBar.value.trim();
-  if(searchQuery){
   if (event.key === "Enter") {
-    console.log(searchQuery);
-    searchBooks(searchQuery);
+    if (searchQuery) {
+      console.log(searchQuery);
+      searchBooks(searchQuery);
+    } else {
+      alert("Per favore, inserisci una categoria.");
+    }
   }
-} else{
-  alert ("Per favore, inserisci una categoria.");
-}
 });
 
 
 searchButton.addEventListener('click', function() {
   const searchQuery = searchBar.value.trim();
-  // Controllo se l'input non è vuoto
+
   if (searchQuery) {
       searchBooks(searchQuery);
   } else {
     alert ("Per favore, inserisci una categoria.");
-      // errorMessage.textContent = "Per favore, inserisci una categoria.";
   }
 });
 

@@ -2,11 +2,17 @@
  import { createModal, hideModal, showModal, openBookModal, getDescription} from './modal.js';
  import { createSpinner, showSpinner, hideSpinner } from './spinner.js';
  
-//  funzione di ricerca libri 
+
+
+ //  funzione di ricerca libri 
  
  export function searchBooks(searchQuery) {
 
-  searchQuery = searchQuery.trim().toLowerCase();
+  searchQuery = searchQuery.toLowerCase().trim();
+
+  if (!searchQuery) {
+    return;
+}
 
  const apiUrl = `https://openlibrary.org/subjects/${searchQuery}.json`;
 
@@ -14,7 +20,7 @@
 
  const booksContainer = document.getElementById('books-container');
     
-    booksContainer.innerHTML = ''; // Svuota il contenitore dei libri
+    booksContainer.innerHTML = ''; 
 
     showSpinner(booksContainer);
 
@@ -40,13 +46,6 @@
     });
     hideSpinner();
   })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-    hideSpinner();
-    // Mostra un messaggio di errore all'utente
-    const booksContainer = document.getElementById('books-container');
-    booksContainer.innerHTML = '<p>Si è verificato un errore durante il caricamento dei dati. Riprova più tardi.</p>';
-});
 }
 
 
@@ -54,12 +53,10 @@
 
     function createBookCard (book){
       
-      // creazione struttuta card 
+      // creazione struttuta card //
 
-      //creo elemento div per la card
       const card = document.createElement('div');
       card.classList.add('book-card');
-      // card.dataset.bookKey = bookKey;
       
       // creo elemento copertina
       const cover = document.createElement('img');
@@ -88,6 +85,8 @@
 
       return card;
 }
+
+
 
 
 
